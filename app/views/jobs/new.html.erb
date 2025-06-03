@@ -1,0 +1,48 @@
+<h1>Form</h1>
+
+<% form_with(method: @job,local: true) do |form| %>
+  <% if @job.errors.any?%>
+     <h1><%= pluralize(@job.errors.count,"errors")%>Errors:</h1>
+     <div>
+      <ul>
+        <% @job.errors.full_messages.each do |message| %>
+          <li><%= message%></li>
+        <%end%>
+      </ul>
+     </div>
+  <%end%>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+    <div>
+    <%= form.label :company %>
+    <%= form.text_field :company %>
+  </div>
+
+    <div>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+   
+    <div>
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+    <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+   
+    <div>
+    <%= form.label :apply_url%>
+    <%= form.text_field :apply_url %>
+  </div>
+
+    <%= form.submit%>
+<%end%>
+
+<p><%= "Back to the jobs",jobs_path %></p>

@@ -1,0 +1,15 @@
+
+<ul>
+<% @jobs.each do |job| %>
+ <li><strong>Title</strong><%=  @job.title %></li>
+ <li><strong>company</strong><%= @job.company %></li>
+ <li><strong>location</strong><%=  @job.location %>></li>
+ <li><strong>category</strong><%=  @job.category %></li>
+ <li><strong>description</strong><%= @job.description %></li>
+ <li>
+    <strong>Apply Here:</strong>
+    <%= link_to "Click Here to apply", job.apply_url, target: "_blank", rel: "noopener" %>
+ </li>
+<%end%>
+<ul>
+<p><%= link_to "Back to all jobs", jobs_path %></p>

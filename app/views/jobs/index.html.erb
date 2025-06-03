@@ -1,0 +1,10 @@
+<h1>All the post</h1>
+<ul>
+  <% @jobs.each do |job| %>
+    <li>
+      <strong><%= link_to job.title, job_path(job) %></strong>
+      At<strong><%= job.company %></strong>
+      in<strong><%= job.location%></strong>
+    </li>
+  <%end%>
+</ul>
